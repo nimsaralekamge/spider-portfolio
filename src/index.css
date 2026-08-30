@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-spider-black: #0a0a0c;
+  --color-miles-red: #ff003c;
+  --color-gwen-teal: #00f0ff;
+  --color-gwen-pink: #ff00aa;
+  --font-action: "Bangers", cursive;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-spider-black);
+  color: white;
+  font-family: var(--font-sans);
+  /* Spider-Verse Halftone Overlay */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 4px 4px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Spider-Verse Glitch Utility */
+@utility glitch-text {
+  text-shadow: 2px 0px 0px var(--color-miles-red), -2px 0px 0px var(--color-gwen-teal);
+  transition: text-shadow 0.15s ease-in-out;
+
+  &:hover {
+    text-shadow: 4px 0px 0px var(--color-miles-red), -4px 0px 0px var(--color-gwen-teal);
+  }
+}
+
+/* Spider-Verse Comic Button */
+@utility comic-button {
+  box-shadow: 4px 4px 0px var(--color-gwen-teal);
+  border: 2px solid white;
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    box-shadow: 6px 6px 0px var(--color-miles-red);
+    transform: translate(-2px, -2px);
+  }
+}
